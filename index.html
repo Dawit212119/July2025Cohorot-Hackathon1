@@ -5,6 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dawit Woekye - Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .profile-circle {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 40px auto;
+        border: 5px solid #3498db;
+        box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        cursor: pointer;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+        animation: float 4s ease-in-out infinite;
+      }
+
+      /* Hover Effects */
+      .profile-circle:hover {
+        transform: scale(1.05) rotate(5deg);
+        box-shadow: 0 15px 40px rgba(52, 152, 219, 0.4);
+        border-color: #e74c3c;
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      /* Pulsing Ring Effect */
+      .profile-circle::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 2px solid rgba(52, 152, 219, 0.5);
+        border-radius: 50%;
+        animation: pulse 3s linear infinite;
+        opacity: 0;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(1.2);
+          opacity: 0;
+        }
+      }
+
+      /* Sparkle Effects (Optional) */
+      .profile-circle:hover::after {
+        content: "★";
+        position: absolute;
+        color: gold;
+        font-size: 24px;
+        animation: sparkle 1s ease forwards;
+        opacity: 0;
+      }
+
+      @keyframes sparkle {
+        0% {
+          transform: scale(0) rotate(0deg);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5) rotate(360deg);
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
@@ -66,16 +153,9 @@
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
           </div>
         </div>
-        <div class="hero-image">
-          <div class="profile-placeholder">
-            <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
-              <circle cx="100" cy="100" r="100" fill="#e2e8f0" />
-              <circle cx="100" cy="80" r="30" fill="#94a3b8" />
-              <path
-                d="M100 120c-25 0-45 15-45 35v45h90v-45c0-20-20-35-45-35z"
-                fill="#94a3b8"
-              />
-            </svg>
+        <div class="">
+          <div class=>
+            <img src="public/dave.jpg" class="profile-circle" alt="Profile Photo" />
           </div>
         </div>
       </div>
@@ -322,7 +402,7 @@
             <div class="education-info">
               <h3>Bachelor of Science in Computer Science</h3>
               <h4>Addis Ababa University</h4>
-              <p class="education-date">2021 - Present (4th Year)</p>
+              <p class="education-date">2023 - Present (4th Year)</p>
               <p>
                 Currently pursuing my degree with focus on software engineering,
                 algorithms, and data structures. Actively working on various
@@ -337,7 +417,11 @@
               Get a detailed overview of my experience, skills, and
               achievements.
             </p>
-            <a href="/placeholder.pdf" class="btn btn-primary cv-btn" download>
+            <a
+              href="https://drive.google.com/file/d/1AVZ0ZdH1mpNJGmcUHy8mB3VHrFPFT2qW/view?usp=sharing"
+              class="btn btn-primary cv-btn"
+              download
+            >
               <svg
                 width="20"
                 height="20"
